@@ -12,7 +12,8 @@
 
   <body>
 
-    <% if current_user %>
+
+    <% if current_user_id %>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <div class="container-fluid">
   <a class="navbar-brand" href="/portfolios">Navbar</a>
@@ -35,6 +36,12 @@
   </div>
 </div>
 </nav>
+    <% end %>
+
+    <% if flash[:notice] != nil %>
+      <div class="container-c alert alert-danger" role="alert">
+        <%= flash[:notice] %>
+      </div>
     <% end %>
 
 
