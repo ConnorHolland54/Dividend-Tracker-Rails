@@ -1,1 +1,15 @@
+
+<%= form_with url: stocks_path, method: :post do |form| %>
+  <%= form.label "Enter a ticker symbol" %><br>
+  <%= form.text_field :ticker %><br>
+  <%= form.submit "Add Stock" %>
+<% end %>
+
+
 <h1>My Wishlist:</h1>
+
+<ul>
+  <% @stocks.each do |s| %>
+  <li><%= s.symbol %></li>
+  <% end %>
+</ul>
