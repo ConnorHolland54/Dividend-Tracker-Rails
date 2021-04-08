@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_001452) do
+ActiveRecord::Schema.define(version: 2021_04_08_164735) do
+
+  create_table "portfolio_stocks", force: :cascade do |t|
+    t.integer "portfolio_id"
+    t.integer "stock_id"
+    t.integer "shares"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "portfolios", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "symbol"
+    t.string "name"
+    t.string "description"
+    t.string "dividend_per_share"
+    t.string "dividend_date"
+    t.string "ex_dividend_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"

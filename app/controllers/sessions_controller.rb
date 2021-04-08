@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     return redirect_to '/login' unless user
     session[:user_id] = user.id
     @user = user
-    redirect_to '/home'
+    redirect_to portfolios_path
   end
 
   def destroy

@@ -1,0 +1,10 @@
+
+
+<h1>Portfolios:</h1>
+<ul>
+  <% @portfolios.each do |p| %>
+    <li><%= link_to p.name, portfolio_path(p) %></li>
+  <% end %>
+</ul>
+
+<button type="button" name="button"><a href="/logout">Logout</a></button>

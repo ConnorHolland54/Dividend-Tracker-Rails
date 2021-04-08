@@ -1,0 +1,6 @@
+<h1>Enter a name:</h1>
+<%= form_with model: @portfolio do |p| %>
+  <%= p.label "Name:" %><br>
+  <%= p.text_field :name %><br>
+  <%= p.submit "Create Portfolio" %>
+<% end %>
